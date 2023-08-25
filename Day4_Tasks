@@ -4,3 +4,27 @@
 1.it run you code as soon as your browser find it and vansished it
 2.Declare and execute our code at the same time.
 
+/Task for day4
+
+let obj1 = {
+    name:"person1",
+    age:5,
+    mode:"remote"
+};
+let obj2 = {
+    age:5,
+    place:"gingee",
+    name:"person2"
+};
+let key_comp = function (ob1,ob2){
+    let a1 = Object.keys(obj1);
+    let a2 = Object.keys(obj2);
+    console.log(a2);
+    for(let x of a1)
+    {
+        let ind=a2.indexOf(x);
+        if(ind>-1)
+        console.log(a2[ind]);                 
+    }
+ }
+ key_comp(obj1,obj2);
