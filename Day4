@@ -38,3 +38,34 @@ for(let i of obj)
 {
     console.log(i['age'])
 }
+
+//2nd Task
+//Use the rest country api print all the country name, region, subregion, flags, border,populations,languages
+
+let xhr =new XMLHttpRequest();
+xhr.open("GET","https://restcountries.com/v3.1/all");
+//process the request on server side and retrieve the data
+xhr.onload = function(){
+    if(xhr.status >=200 && xhr.status<300)
+    {
+        let data = JSON.parse(this.response);
+        //looping to individual data
+        for(let i=0;i<data.length;i++)
+        {
+            let r_countries = data[i];    
+            console.log(`
+              Country Name : ${r_countries.name.common},
+              Country region : ${r_countries.region},
+              Country subregion : ${r_countries.subregion},
+              Country Flags : ${r_countries.flag},
+              Country borders: ${r_countries.borders},
+              populations : ${r_countries.population},     
+              languages :  ${Object.values(r_countries.languages)}    
+              `);
+        }
+        
+    }   
+
+}
+xhr.send()
+
