@@ -141,4 +141,39 @@
 </html>
 
 ```
+---
+3. Use certain HTML elements to display the following in a HTML page.
+
+```HTML
+<!-- Create the ordered and unordered list -->
+    <ul>
+        <li>Programming Language</li>
+        <ul style="list-style-type:circle">
+            <li>Javascript</li>
+                <ol type="a">
+                    <li>Angular</li>
+                    <li>React</li>
+                    <li>Vue.js</li>
+                </ol>
+            <li>Python</li>   
+                 <ol type="a">
+                    <li>Django Framework</li>
+                    <li>Flask Framework</li>
+                    
+                </ol> 
+            <li>Java</li>
+                <ol type="a">
+                    <li>Spring</li>
+                    <li>Maven</li>
+                    <li>Hibernate</li>
+                </ol>
+        </ul>
+        <li>Database</li>
+            <ul style="list-style-type:circle">
+            <li>MySQL</li>
+            <li>MongoDB</li>     
+            <li>Cansandra</li>
+        </ul>
+    </ul>
+```
 
