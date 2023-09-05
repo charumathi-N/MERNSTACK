@@ -1,0 +1,136 @@
+//comments
+//contents
+// Understanding the basics of prototype
+// What is classes in js?
+// constructor
+// need of setters/getters
+// use of this key word in classes
+
+//class creation
+class fun_name {
+//constructor creation
+  constructor(name, job, place) {
+    this.name = name;
+    this.job = job;
+    this.place = place;
+  }
+  //Methods -> static method and instance method
+}
+//object creation
+let person1 = new fun_name("Deepak","Working","Gingee");// It means we are calling  constructor
+let person2 = new fun_name("Charu","studing","Gingee");
+let person3 =  new fun_name("Maha","working","trichy");
+
+console.log(person1);
+console.log(person2);
+console.log(person3);
+
+//prototype - property associated with objects
+
+//Create a class with name Car
+// 1.color, 2.fuel, 3.rpm, 4.speed , 5.year
+
+class Car{
+  //speacialized methods that is called right after object creation
+  //you can set the properties of the object
+  constructor(color,fuel,rpm,speed,year)
+  {
+  //Set the values of the object
+  this.color=color;
+  this.fuel=fuel;
+  this.rpm=rpm;
+  this.speed=speed;
+  this.year=year;
+  }
+  //Methods -> To perform some task or business logic
+  specification(){
+    let data= `
+    Color:${this.color}
+    Fuel:${this.fuel}
+    RPM:${this.rpm}
+    Speed:${this.speed}
+    Year:${this.year}
+    `
+    return data;
+  }
+}
+let car1=new Car("White","Electic",5000,80,2022);
+let car2=new Car("Silver","Electic",4000,60,2021);
+
+//Accessing of the method
+//Access methods using object reference
+
+console.log(car1.specification());
+
+//Inheritance
+//This is parent class
+class Man{
+  constructor(name,salary){
+    console.log("I am parent class constructor");
+    this.name=name;
+    this.salary=salary;
+  }
+}
+//This is child class
+class Employee extends Man{
+  constructor(name,position){
+    console.log("I am employee class constructor");
+    super(name);
+    this.position=position;
+  }
+}
+//This Peon class
+class Peon extends Man{
+  constructor(name,salary){
+     console.log("I am peon class constructor");
+     super(name,salary);
+  }
+}
+let parentObject = new Man("Sohan");
+//create an object for child class
+let emp = new Employee("Lavish","Senior fullstack developer");
+console.log(emp.name); 
+
+//Note multiple inheritance not possible in JS
+//super keyword is used to access parent property and method
+
+//Getters and Setter in Javascript
+//Getter -> it is used to read or prit the data
+//Setter -> it is used to set the data
+
+//Setter Method -> it is to set the values
+
+// object ->
+// 1.Data properties
+// 2.Acessor properties
+
+let student={
+  firstname:"Sohan",
+  set ChangeName(newname){
+    this.firstname=newname;
+  }
+}
+console.log(student.firstname);
+student.ChangeName="Lavish";
+console.log("After Changes"+student.firstname);
+
+//2nd example for getter and setter
+class car{
+  //Toget value
+  setAttr(model,year){
+     this.model = model;
+     this.year = year;
+  }
+  //Toset value
+  getModel(){
+     console.log(this.model,this.year);
+  }
+}
+let cars = new car();
+cars.setAttr("Nexon",2020);
+cars.getModel();
+
+//Advantages of getter and setter
+//1.Secure better data quality
+//2.It easier or simpler to use properties and method of an objects
+//
