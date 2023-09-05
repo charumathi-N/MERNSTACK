@@ -177,3 +177,8 @@
     </ul>
 ```
 
+---
+```HTML
+<a href="https://google.com" target="_blank">Google</a>
+
+```
