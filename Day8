@@ -1,6 +1,6 @@
-#DAY - 8 HTML tasks
+# DAY - 8 HTML tasks
 1. Fix the bug in below snippet
-```
+```HTML
     <html lang="en">
     <head>
         <title>Document
