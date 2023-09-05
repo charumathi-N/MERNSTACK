@@ -1,0 +1,76 @@
+let employee1={
+  name:"charu",
+  age:"23",
+  degree:"BE",
+  addresse:{
+    city:"Gingee",
+    state:"TamilNadu",
+    country:"India"
+  }
+}
+let {name,age}=employee1;
+console.log(`
+    Name:${name},
+    Age:${age}
+`);
+let {city,state,country}=employee1.addresse;
+console.log(`    
+    City:${city},
+    State:${state},
+    Country:${country}    
+`)
+
+//Destructure of a function
+function myfun({Food,color,Addon}){
+  console.log("My fav food is :"+Food);
+  console.log("It is "+color+" in color.");
+  console.log("I always used to have it with "+Addon);
+}
+let obj = {
+   Food:"Momoes",
+   color:"white",
+   Addon:"sause"
+}
+myfun(obj);
+
+
+//spread operation
+//Spreads the value in an iterable way across an array or string elements
+const array1 = [10,20,30,40,50];
+const array2 = [60,70,80,90,100];
+console.log(array1+","+array2);
+//use spread operator to overcome this
+const array3 =[100,110, ...array1];
+console.log(array3);
+
+let arr1 = ["Apple","Banana","Orange","Mangoes"];
+let arr2=[...array1];
+console.log(arr1);
+arr2.push("pineapple");
+console.log(arr2);
+console.log(arr1);
+//using spread operator, you can prevent the original get updated.
+
+let A1 = ["Apple","Banana","Orange","Mangoes"];
+let A2 = [...A1];
+A2.push("pineapple");
+console.log(A2);
+console.log(A1);
+
+
+//1,6,8,2,5,9,12,3 => use rest parameter to sort the data
+
+function myfun(ay1,ay2,...ay3){  
+   ay3.push(ay1,ay2);
+   console.log(ay3);
+   let res=ay3.sort(function(a, b){
+    return a-b;
+    }).join(' ');
+   console.log(res);
+  }
+myfun(1,6,101,8,2,5,9,12,3,100);
+
+
+
+        
+
