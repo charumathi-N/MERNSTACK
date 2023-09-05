@@ -1,3 +1,226 @@
 Using anonyomous and IIFE function solve the below problem
 
 1.print the odd numbers in the array
+
+// Using anonyomous and IIFE function solve the below problem
+
+// 1.print the odd numbers in the array
+//anonyomous
+let myfun1 = function(){
+let array1 = [10,15,20,25,30,35,40,45];
+array1.forEach(
+    (x)=>{
+        if(x%2!=0)
+    {
+        console.log(x);
+    }
+}
+)
+}
+
+//(or)
+// let anon_func1 = ()=> "Hello"
+// console.log(anon_func1());
+
+let anon_func1 = (arr) =>{ 
+   arr.forEach((x)=>{
+      if(x%2!==0)
+      {
+        console.log("The odd value is:"+x);
+      }
+   })
+
+}
+
+//(or)
+//IIFE - immediately invoked function expression
+//2.convert all the string to title caps in the string array
+//syntax: (function(){}());
+(function(arr)
+{
+   arr.forEach((i)=>{
+    if(i%2!==0){
+      console.log("The IIFE for odd number is:"+i);
+    }
+   })
+}([10,15,20,25,30,35,40,45,50]));
+
+//first task ended
+
+//Task - 2
+//convert the string into uppercase using anonyomous
+let myfun2 = function(arr){
+for(let i of arr)
+{
+    console.log(`The ${i} is ${i.toUpperCase()}`);
+}
+}
+myfun1();
+myfun2(["apple","Orange","Mango","grapes"]);
+
+
+//(or)
+
+let myfun3 = (arr)=>{
+  arr.forEach((x)=>{
+    console.log(`The ${x} is ${x.toUpperCase()}`);
+  })
+}
+myfun2(["apple","Orange","Mango","grapes"]);
+
+//(or) convert using string into uppercase using IIFE
+
+(function(arr){
+    arr.forEach((x)=>{
+        console.log(`The IIFE ${x} is ${x.toUpperCase()}`);
+    }
+    )
+}(["apple","Orange","Mango","grapes"]));
+
+//Sum of all numbers in a array
+//anonmous function
+let sum=0
+let myfun4 = function(arr){
+    arr.forEach(
+        (x)=>{
+            sum = sum + x;
+        }
+    )  
+    console.log(`The sum value of array is:`+sum);
+}
+myfun4([10,20,30,40,50]);
+
+//(or)
+//arrow function 
+let add=0
+let myfun5 = (arr)=>{
+       arr.forEach(
+          (x)=>{
+            add = add+x;
+          }
+       )
+       console.log(`The sum value of array is :`+sum)
+}
+myfun5([10,20,30,40,50]);
+
+//(or)
+//sum of all numbers IIFE function
+
+(function(arr){
+    let value=0;
+    arr.forEach((x)=>{
+        value= value+x;
+    })
+    console.log(`The sum value using IIFE function:${value}`);
+}([10,20,30,40,50]))
+
+
+//Task - 3
+// var a = [5, 9, 63, 29, 35, 6, 55, 23]
+//This is declared as global function
+function isprime(val)
+{
+    let flag = false;
+    for (let i = 2; i <= val / 2; ++i) {
+      // condition for nonprime number
+      if (val % i == 0) {
+        flag = true;
+        break;
+      }
+    }
+    if (!flag)
+      return val;
+  
+}
+
+//anonmous function
+let prime=[];
+let myfun6 = function(arr) {
+    arr.forEach((x)=>{
+        if(isprime(x))
+        {
+            prime.push(x);
+        }
+    })
+    return prime;
+}
+
+console.log(myfun6([2,4,5, 9, 63, 29, 35, 6, 55, 23]));
+//Task - 4
+//IIFE function
+let prime2=[];
+(function(arr){
+    arr.forEach((x)=>{
+      if(isprime(x))
+      {
+        prime2.push(x);
+      }
+    })
+    console.log(prime2);
+}([2,4,5]))
+
+
+//Task - 5
+//return all the strings in the palindrome
+let arry2=[]
+let myfun7 = function(arr){
+  arr.forEach((x)=>{
+    let str= x.split("").reverse().join("");
+    if(x===str)
+    {
+       arry2.push(x);
+    }        
+  })
+  return arry2;
+}
+console.log(myfun7(["did","121","lol","English","Maths"]));
+
+
+//Task - 6
+//Return the median of two sorted array of the same size.
+let ar1 = [36,75,34,10,99,23];
+let ar2 = [98,22,45,76,83,90];
+let myfun8 = function(arr1,arr2){
+  let len1 = arr1.length;
+  let len2 = arr2.length; 
+   let sort1 = arr1.sort(function(a, b){return a - b});
+   let sort2 = arr2.sort(function(a, b){return a - b});
+   console.log(sort1);
+   console.log(sort2);
+   if((len1 % 2 != 0) || (len2%2 != 0) )
+    {
+       
+       console.log("the median of first array and odd length is:"+sort1[Math.round(len1/2)]);
+       console.log("the median of second array and odd length is:"+sort2[Math.round(len2/2)]);
+    }
+    else{
+      console.log("the median of first array and even length is:" +(sort1[Math.round((len1 - 1) / 2)] + sort1[Math.round(len1 / 2)]) / 2);
+      console.log("the median of second array and even length is:" +(sort2[Math.round((len2 - 1) / 2)] + sort2[Math.round(len2 / 2)]) / 2);
+    }   
+}
+myfun8(ar1,ar2)
+
+//Task - 7
+//Remove the duplicate from an array
+//anonyomous array
+let arr3=[10,20,30,20,30,40,50];
+let duplicate=[];
+let myfun9 = function(ar3){
+    for(let i=0;i<ar3.length;i++)
+    {
+      for(let j=i+1;j<ar3.length;j++)
+      {
+        if(ar3[i]===ar3[j])
+        {
+           duplicate.push(ar3[i]);
+        }
+      }
+    }
+    console.log(duplicate);
+}
+myfun9(arr3)
+
+//Task - 8
+//Rotate an k array by k-times
+
+
