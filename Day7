@@ -1,0 +1,121 @@
+// MRF Approach 
+// Why we should MRF?
+// MAP 
+// REDUCE 
+// FILTER 
+let array=[
+  {
+    id:103,
+    name:"Mahesh",
+    designation:"REact DEveloper",
+    yearofExp:7
+  },
+  {
+    id:104,
+    name:"Swapnil",
+    designation:"Senior analyst",
+    yearofExp:18
+  },
+  {
+    id:105,
+    name:"John",
+    designation:"Senior Manager",
+    yearofExp:15
+  }
+]
+
+//Display the name of all the employees from given object
+
+array.forEach((x)=>{
+  console.log(`
+    id : ${x.id},
+    name : ${x.name},
+    designation : ${x.designation},
+    yearofExp : ${x.yearofExp}
+  `);
+})
+
+// MAP:
+// Replacement to forloop concept
+// Map function is one of the array method to modify ElementInternals in an array and get a new array with the modified element.
+
+// using map function, we can modify current element of an array or array of object. 
+// Map function is Replacement to a traitional for loop concepts.ElementInternals
+
+// Map method in array iterate over each element, followe by callback function that perform operation on all the element of the array.
+let myarr = [10,20,30];
+let res= myarr.map((x)=>{
+    return x*2;
+})
+console.log(res);
+
+
+//Reduce function - all the units in the array converts into single unit
+//it calculates sum and reduce entitire array into single units.
+
+let totalyearofExp = array.reduce((previous,current)=>{
+   return previous+current.yearofExp
+},0)
+console.log(totalyearofExp);
+
+//Get the Higest year of experience with reduce function
+let highestYearofExp=array.reduce((prev,curr)=>{
+  if(prev.yearofExp>curr.yearofExp){
+    return prev;
+  }
+  else{
+    return curr;
+  }
+},0)
+console.log(highestYearofExp);
+
+//Filter - works in same way as it sounds.
+//filter is used to create a new array that contains subset ements of its original array based on some condition 
+let array1 = [1,18,45,6,7,33,4];
+let newarray = array1.filter((num)=>{
+  return num>10;
+}
+)
+console.log(newarray);
+
+//Get the data of employee having yearsofExperience > 10
+let yearofEx = array.filter((x)=>{
+    return x.yearofExp>10;   
+})
+console.log(yearofEx);
+
+//(or)
+
+let filteredData = array.filter((data)=>data.yearofExp>=10);
+console.log(filteredData)
+filteredData.map((data)=>{
+  console.log(`
+  Id: ${data.designation}
+  Name: ${data.name}
+  `)
+})
+
+
+//Chaining Over MRF
+[
+  {
+    name:"rohan",
+    year:2021,
+    rank:1
+  },
+  {
+    name:"sohan",
+    year:2020,
+    rank:2
+  },
+  {
+    name:"kohan",
+    year:2022,
+    rank:3
+  },
+  {
+    name:"Jenny",
+    year:2023,
+    rank:5
+  }
+]
