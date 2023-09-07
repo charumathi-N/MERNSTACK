@@ -1,5 +1,5 @@
 # DAY - 8 HTML tasks
-1. Fix the bug in below snippet
+> 1. Fix the bug in below snippet
 ```HTML
     <html lang="en">
     <head>
@@ -18,7 +18,7 @@
     </html>
 ```
 
-2.Design a contact us form with all fields as required.
+> 2.Design a contact us form with all fields as required.
 
 ```HTML
 
@@ -142,7 +142,7 @@
 
 ```
 ---
-3. Use certain HTML elements to display the following in a HTML page.
+> 3. Use certain HTML elements to display the following in a HTML page.
 
 ```HTML
 <!-- Create the ordered and unordered list -->
@@ -176,9 +176,98 @@
         </ul>
     </ul>
 ```
-
 ---
-```HTML
-<a href="https://google.com" target="_blank">Google</a>
+> 4. link
 
+```HTML
+<fieldset>
+        <legend><h1>Link</h1></legend>
+    <a href="https://google.com" target="_blank">Google</a>
+</fieldset>
+<br><br>
+```
+---
+>5. Design the form
+```HTML
+<fieldset>
+    <form action="about.html" method="post">
+       <h1 style="color:white;background-color:rgb(255, 47, 47);">Yes! I want to subscribe to Mag-o-zine</h1>
+       <label for="">First Name</label>
+       <input type="text" name="fname">
+       <label for="">Last Name</label>
+       <input type="text" name="lname">
+       <br><br>
+       <label for="">Address</label>
+       <input type="text" name="Address" size="250">
+       <br><br>
+       <label for="">City</label>
+       <input type="text" name="City">
+       <label for="">State</label>
+       <input type="text" name="State">
+       <label for="">Zip</label>
+       <input type="text" name="Zip">
+       <br><br>
+       <label>subscribe for:</label>
+       <input type="radio" name="exp">
+       <label>1 Year($19.95)</label>
+       <input type="radio" name="exp">
+       <label>2 Year($35.00)</label>
+       <br><br>
+       <label>send me more information about:</label>
+       <input type="checkbox">Computer - Mag-o-zine 
+       <input type="checkbox">Fishing-Zine
+       <input type="checkbox">Cat-O-zine
+    </form>
+</fieldset>
+<br></br>
+```
+
+> 6. Design a table
+```HTML
+    <fieldset>
+    <table>
+       <caption>Health chart</caption>
+       <tr>
+        <td rowspan="2">State of Health</td>
+        <td colspan="2">Fasting Value</td>        
+        <td>After Eating</td>        
+       </tr>
+       <tr>
+        <!-- <td></td> -->
+        <td>Minimum</td>        
+        <td>Maximum</td>  
+        <td>2 hours after eating</td>      
+       </tr>
+
+       <tr>
+        <td>Healthy</td>
+        <td>70</td>
+        <td>100</td>
+        <td>Less than 140</td>
+       </tr>
+          
+       <tr>
+        <td>Pre-Diabets</td>
+        <td>101</td>
+        <td>126</td>
+        <td>140 to 200</td>
+       </tr>
+
+       <tr>
+       <td>Diabets</td>
+       <td>More than 126</td>
+        <td>N/A</td>
+        <td>More than 200</td>
+       </tr>
+    </table>
+    </fieldset>
+    <br><br>
+```
+> 7. In your, HTML page add "HTML & CSS is awesome" and Highlight it without using any CSS.
+```HTML
+<fieldset>
+    <ul>
+    <mark style="font-size: 60px;">"HTML & CSS is awesome"</mark>
+</ul>
+</fieldset>
 ```
